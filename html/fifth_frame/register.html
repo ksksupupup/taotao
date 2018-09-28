@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <title>HTML</title>
+
+    <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="stylesheet" type="text/css" href="../../css/api.css" />
+
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+        }
+
+        body {
+            background: rgba(0, 0, 0, 0.2);
+            width: 100%;
+            height: 100%;
+        }
+
+        .floatbox {
+            position: absolute;
+            text-align: center;
+            background: #fff;
+            top: 10%;
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .floatheader {
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+            color: #999;
+            text-align: left;
+            text-align: center;
+        }
+
+        .floatheader img {
+            width: 40px;
+        }
+
+        .floatbody {
+            border-bottom: 1px solid #D0D2D6;
+        }
+
+        .floatbodybtn {
+            width: 20px;
+            height: 20px;
+            background: #0fc;
+        }
+
+        .floatfooter {
+            height: 40px;
+            line-height: 40px;
+            font-size: 18px;
+        }
+        /* 水平等宽样式 */
+
+        .row {
+            display: -webkit-box;
+            display: -webkit-flex;
+        }
+
+        .col {
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            padding: 10px;
+        }
+
+        .col img {
+            width: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .col span {
+            font-size: 12px;
+            padding-top: 10px;
+        }
+        /* 悬浮样式 */
+
+        .btnhover {
+            background-color: #dcdcdc !important;
+        }
+
+        .thirdcompy .left {
+            margin-right: 20px;
+        }
+
+        .thirdcompy .left,
+        .thirdcompy .right {
+            width: 40%;
+            display: inline-block;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            vertical-align: top;
+            text-align: left;
+            font-size: 18px;
+        }
+
+        .thirdcompy .left img,
+        .thirdcompy .right img {
+            width: 30px;
+            height: 30px;
+            float: left;
+            margin: 5px 10px;
+        }
+
+        .thirdcompy span {
+            line-height: 40px;
+            color: #666;
+        }
+
+        .thirdcompy {
+            margin-bottom: 50px;
+        }
+
+        input {
+            height: 50px;
+            font-size: 18px;
+            color: #8E8C8C;
+            width: 80%;
+        }
+
+        input::-webkit-input-placeholder {
+            color: #ccc;
+        }
+
+        .divider {
+            height: 15px;
+        }
+
+        .email {
+            margin-top: 10px;
+        }
+
+        .email,
+        .passwd {
+            /*margin-top: 3px;*/
+            background: #fff;
+        }
+
+        .passwd img,
+        .email img {
+            vertical-align: top;
+        }
+
+        .item {
+            background-color: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            position: relative;
+			height:52px;
+        }
+        /*.email, .passwd, .btn {margin:3px 10px;}*/
+
+        .btn {
+            margin: 3px 10px;
+        }
+
+        .btn {
+            background: #ff6836;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            font-size: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .btn button {
+            color: #fff;
+        }
+
+        .email img {
+            width: 25px;
+            margin-top: 15px;
+            margin-left: 10px;
+            margin-right: 9px;
+        }
+
+        .passwd img {
+            height: 25px;
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .secretword img {
+            height: 25px;
+            margin-top: 10px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        /* 底部样式 */
+
+        .bottom {
+            /*position: absolute;bottom: 0;*/
+            width: 100%;
+            text-align: center;
+            /*padding-bottom: 20px;*/
+            font-size: 12px;
+        }
+
+        .bottom img {
+            height: 50px;
+        }
+
+        .bottom .arrow {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .bottom .arrow img {
+            width: 40px;
+            height: 20px;
+        }
+
+        #qqpic {
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .thirdinfo {
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .secretword input {
+            width: 50%;
+			height:50px;
+			line-height:50px;
+        }
+
+        .secretimg {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 56px;
+            margin-right: 10px;
+            border-left: 1px solid #e0e0e0;
+        }
+
+        .secretimg img {
+            height: 60%;
+        }
+
+        .thirdcompy .left {
+            margin-right: 20px;
+        }
+
+        .thirdcompy .left,
+        .thirdcompy .right {
+            width: 40%;
+            display: inline-block;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            vertical-align: top;
+            text-align: left;
+            font-size: 18px;
+        }
+
+        .thirdcompy .left img,
+        .thirdcompy .right img {
+            width: 30px;
+            height: 30px;
+            float: left;
+            margin: 5px 10px;
+        }
+
+        .thirdcompy span {
+            line-height: 40px;
+            color: #666;
+        }
+
+        .loginmore {
+            margin-top: 10px;
+        }
+
+        .loginmore span {
+            color: #0078ff;
+        }
+
+        .loginmore .forget {
+            margin-left: 10px;
+        }
+
+        .loginmore .phone {
+            margin-right: 10px;
+            float: right;
+        }
+
+        .btnhover {
+            background-color: #dcdcdc !important;
+        }
+
+        .buyhover {
+            background-color: rgba(252, 85, 0, 0.6) !important;
+        }
+
+        .presshover {
+            background-color: #FAFAFA !important;
+        }
+
+        .txthover {
+            color: rgba(0, 120, 255, 0.6) !important;
+        }
+
+        input {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="floatbox">
+        <div class="floatbody">
+            <form action="">
+                <div class="item email">
+                  <img src="../../image/login01.png" alt=""><input type="text" placeholder="邮箱/手机号/用户名" id="username">
+                </div>
+                <div class="item passwd">
+                  <img src="../../image/login02.png" alt=""><input type="password" placeholder="输入密码" id="password">
+                </div>
+                <div class="item passwd">
+                  <img src="../../image/login02.png" alt=""><input type="password" placeholder="再次输入密码" id="passwd2">
+                </div>
+                <div class="item secretword">
+                  <input type="password" placeholder="验证码" id="code">
+                  <div class="secretimg">
+                    <img src="../../image/secretword.png"></div>
+                </div>
+                <div class="btn" tapmode="buyhover" onclick="submintform()"><button type="submit" onclick="submintform()">注册</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+	<script type="text/javascript" src="../../script/jquery.js"></script>
+	<script type="text/javascript">
+		//登录按钮点击事件
+		function submintform() {
+			api.closeFrame({
+	            name: 'register'
+            });
+			var phone = $("#username").val();
+			//通过ID获取表单元素的值
+			var pass = $("#password").val();
+			alert("注册成功");
+			$.ajax({
+				
+				url : "http://192.168.43.79:8080/taotao02/regist",
+				type : "post",
+				dataType : "var",
+				xhrFields : {
+					withCredentials : true,
+				},
+				crossDomain : true,
+//				data : {
+//					"phone" : phone,
+//					"password" : pass
+//				},
+				success : function(data) {
+					
+					alert("注册成功")
+				}
+			})
+			
+		}
+	
+	
+</script>
+
+</html>

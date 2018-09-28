@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+	<title>全部分类</title>
+	<link rel="stylesheet" type="text/css" href="../../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+
+	<style>
+		html, body {width: 100%;min-height: 100%;background: #f0f0f0;}
+		.h80 {height: 80px;}
+		.h40 {height: 40px;}
+		.h20 {height: 20px;}
+    	.h10 {height: 10px;background: #f0f0f0;}
+		.h1 {height: 1px;margin-left: 15px;background: #f0f0f0;}
+		.fr {float: right;}
+		.fl {float: left;}
+		.hightitem {background-color: #fff;}
+		.inwrap {margin: 0 10px;}
+
+		/* 2X2样式 */
+		.row {display: -webkit-box;display: -webkit-flex;}
+		.col {-webkit-box-flex:1; -webkit-flex:1; flex:1;position: relative;}
+		.col img {position: absolute; right: 0; width: 80px; top: 0;}
+		.col .matrixcell {display: table-cell;vertical-align: middle; padding-left: 10px;}
+		.col .matrixcell .title {margin-bottom: 10px;}
+		.matrix {display: table;height: inherit;}
+
+		/* 1. 2X2 */
+		.flipcard {height: 30px; line-height: 30px; text-align: center; margin: 5px 5px 3px 5px; color: #000; background-color: #fff; font-size: 14px;}
+		.darktitle {height: 40px;line-height: 40px;margin-left: 15px;font-size: 14px;color: #666;}
+
+		/* 2. 三列 */
+		.scratch02 .word {margin-top: 10px;margin-left: 10px;}
+		.scratch02 .word .title{font-size: 18px;}
+		.scratch02 .word .info{font-size: 12px;color: #666;}
+		.scratch02 img {position: relative;width: 60px; height: 50px;}
+		.showposter {text-align: center;margin-top: 5px;padding-bottom: 10px;}
+
+		/* 列表 */
+		.classify {height: 60px;line-height: 60px;background-color: #fff;position: relative;border-bottom: 1px solid #e0e0e0;}
+		.classify .sublogo {width: 30px;margin-top: 15px;margin-left: 15px;float: left;}
+		.classify .arrow {position: absolute;vertical-align: top;right: 15px;top:20px;height: 20px;}
+		.classify .info {line-height: 20px; float: left; height: 60px;margin-left: 10px;}
+		.classify .info .title {font-size: 15px; color: #000; margin-top: 10px;}
+		.classify .info .subtitle {font-size: 12px; color: #666; margin-top: 5px;}
+		.subclass {display: none;}
+		.subclass .flipcard {margin:0;}
+		.brb {border-right: 1px solid #e0e0e0;border-bottom: 1px solid #e0e0e0;}
+		.brb {border-right: 1px solid #e0e0e0;border-bottom: 1px solid #e0e0e0;}
+		.bb {border-bottom: 1px solid #e0e0e0;}
+
+		.presshover {background-color: #FAFAFA !important;}
+		table {width: 100%;}
+	</style>
+</head>
+<body>
+	<!-- 1 2X2 -->
+	<div class="darktitle">常用</div>
+	<div class="row inwrap">
+		<div class="col flipcard" tpamode="presshover" onclick="openVirList()">相机</div>
+		<div class="col flipcard" tpamode="presshover" onclick="openVirList()">餐具</div>
+		<div class="col flipcard" tpamode="presshover" onclick="openVirList()">工具</div>
+	</div>
+	
+
+	<!-- 2 列表 -->
+	<div class="h10"></div>
+	<div class="darktitle">全部</div>
+	<div class="classify"  tapmode="" onclick="expandList('food')">
+		<img src="../../image/tuan/more_icon_10.png" alt="" class="sublogo">
+		<div class="info">
+			<div class="title">厨房用具</div>
+			<div class="subtitle">电热锅、筷子、保温碗、暖壶</div>
+		</div>
+		<img src="../../image/ic_arrow_down_black.png" alt="" class="arrow" id="foodarrow">
+	</div>
+	<div class="subclass" id="food"  data-click='0'>
+		<table>
+			<tr>
+				<td  tpamode="presshover" onclick="openVirList()" class="flipcard brb">厨房用品</td>
+				<td  tpamode="presshover" onclick="openVirList()" class="flipcard brb">小火锅</td>
+				<td  tpamode="presshover" onclick="openVirList()" class="flipcard brb">大功率</td>
+			</tr>
+			<tr>
+				<td  tpamode="presshover" onclick="openVirList()" class="flipcard brb">省电款</td>
+				<td  tpamode="presshover" onclick="openVirList()" class="flipcard brb">防盗款</td>
+				<td  tpamode="presshover" onclick="openVirList()" class="flipcard brb">废品</td>
+			</tr>
+			
+			
+			
+			
+		</table>
+
+
+		<!-- <div class="row">
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard brb">全部美食</div>
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard brb">火锅</div>
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard bb">小吃快餐</div>
+		</div>
+		<div class="row">
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard brb">面包甜点</div>
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard brb">咖啡厅</div>
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard bb">自助餐</div>
+		</div>
+		<div class="row">
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard brb">日本</div>
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard brb">西餐</div>
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard bb">烧烤</div>
+		</div>
+		<div class="row">
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard brb">韩国料理</div>
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard brb">东南亚菜</div>
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard bb">粤菜</div>
+		</div>
+		<div class="row">
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard brb">北京菜</div>
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard brb">素菜</div>
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard bb">川菜</div>
+		</div>
+		<div class="row">
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard brb">湘菜</div>
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard brb">东北菜</div>
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard bb">江浙菜</div>
+		</div>
+		<div class="row">
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard brb">海鲜</div>
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard brb">新疆菜</div>
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard bb">清真菜</div>
+		</div>
+		<div class="row">
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard brb">云南菜</div>
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard brb">西北菜</div>
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard bb">贵州菜</div>
+		</div>
+		<div class="row">
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard brb">鲁菜</div>
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard brb">湖北菜</div>
+			<div  tpamode="presshover" onclick="openVirList()" class="col flipcard bb">其他</div>
+		</div> -->
+	</div>
+
+
+
+	<div class="classify"  tapmode="" onclick="expandList('fun')">
+		<img src="../../image/tuan/more_icon_30.png" alt="" class="sublogo">
+		<div class="info">
+			<div class="title">健身工具</div>
+			<div class="subtitle">足疗按摩、骑行、景点/郊游、爬山</div>
+		</div>
+		<img src="../../image/ic_arrow_down_black.png" alt="" class="arrow" id="funarrow">
+	</div>
+	<div class="subclass" id="fun"  data-click='0'>
+		<table>
+			<tr>
+				<td  tpamode="presshover" onclick="openVirList()" class="flipcard brb">全部工具</td>
+				<td  tpamode="presshover" onclick="openVirList()" class="flipcard brb">臂力棒</td>
+				<td  tpamode="presshover" onclick="openVirList()" class="flipcard brb">拉力器</td>
+			</tr>
+			<tr>
+				<td  tpamode="presshover" onclick="openVirList()" class="flipcard brb">杠铃</td>
+				<td  tpamode="presshover" onclick="openVirList()" class="flipcard brb">轮滑鞋</td>
+				<td  tpamode="presshover" onclick="openVirList()" class="flipcard brb">滑板</td>
+			</tr>
+			
+			
+		</table>
+	</div>
+
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script>
+	function openVirList() {
+		
+	}
+
+	function expandList (type) {
+		var food = document.getElementById(type);
+		var click = food.getAttribute("data-click");
+
+		if (click == 0) {
+			// 点开
+			food.setAttribute("data-click", 1);
+			$api.dom('#'+type+'arrow').src = "../../image/ic_arrow_up_black.png";
+			food.style.display = 'block';
+		}else {
+			// 关闭
+			food.setAttribute("data-click", 0);
+			$api.dom('#'+type+'arrow').src = "../../image/ic_arrow_down_black.png";
+			food.style.display = 'none';
+		}
+	}
+</script>
+</html>
